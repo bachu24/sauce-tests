@@ -12,4 +12,9 @@ export class InventoryPage {
   async goToCart() {
     await this.page.click('.shopping_cart_link');
   }
+
+  async getCartItemCount(): Promise<number> {
+    const countText = await this.page.locator('.shopping_cart_badge').textContent();
+    return countText ? parseInt(countText) : 0;
+  }
 }
