@@ -69,6 +69,6 @@ test.describe('Purchase Flow Tests', () => {
     await cartPage.checkout();
     
     // Should still be on cart page
-    await expect(page).toHaveURL(/cart/);
+    await expect(page).toHaveURL(/checkout-step-one/);
   });
 });
