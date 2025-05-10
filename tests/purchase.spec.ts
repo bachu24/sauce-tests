@@ -46,7 +46,7 @@ test.describe('Purchase Flow Tests', () => {
 
     // Step 7: Verify order confirmation
     const confirmation = await completePage.getConfirmationMessage();
-    expect(confirmation).toContain('THANK YOU FOR YOUR ORDER');
+    expect(confirmation).toBe('Thank you for your order!');
     
     // Verify order is complete
     await expect(page.locator('.complete-header')).toBeVisible();
